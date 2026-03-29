@@ -322,7 +322,6 @@ export default function App() {
                 src={getAssetUrl("JpJ.png")}
                 alt="Ioannis H Platsis"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
@@ -454,7 +453,6 @@ export default function App() {
                       src={getAssetUrl(exp.logo)}
                       alt={exp.company}
                       className="w-full h-full object-contain"
-                      referrerPolicy="no-referrer"
                     />
                   </div>
 
@@ -505,7 +503,6 @@ export default function App() {
                       src={getAssetUrl(edu.logo)}
                       alt={edu.school}
                       className="w-full h-full object-contain"
-                      referrerPolicy="no-referrer"
                     />
                   </div>
                   <div className="space-y-4 flex-1">
@@ -564,11 +561,10 @@ export default function App() {
                   className="material-card overflow-hidden group cursor-pointer flex flex-col"
                 >
                   <div className="aspect-[16/10] overflow-hidden relative bg-white dark:bg-white/5 flex items-center justify-center">
-                    <img 
-                      src={getAssetUrl(project.image)} 
-                      alt={project.title} 
+                    <img
+                      src={getAssetUrl(project.image)}
+                      alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                      referrerPolicy="no-referrer"
                     />
                     {project.link && (
                       <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white dark:bg-slate-900 flex items-center justify-center text-slate-900 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity shadow-sm">
