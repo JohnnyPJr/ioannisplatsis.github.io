@@ -63,6 +63,13 @@ export default function App() {
     }
   }, []);
 
+  const getAssetUrl = (path: string) => {
+    if (!path) return "";
+    if (path.startsWith('http')) return path;
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${import.meta.env.BASE_URL}${cleanPath}`;
+  };
+
   const toggleTheme = () => {
     const newMode = !isDarkMode;
     setIsDarkMode(newMode);
@@ -165,7 +172,7 @@ export default function App() {
       <nav className="floating-nav group/nav">
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white dark:border-white/20 shadow-sm mr-2 hidden md:block group-hover/nav:scale-105 transition-transform duration-500">
           <img 
-            src={`${import.meta.env.BASE_URL}JpJ.png`} 
+            src={getAssetUrl("JpJ.png")} 
             alt="Ioannis" 
             className="w-full h-full object-cover"
             onError={(e) => {
@@ -312,7 +319,7 @@ export default function App() {
           >
             <div className="relative w-full max-w-[320px] aspect-square rounded-full overflow-hidden border-8 border-white dark:border-white/10 shadow-2xl group">
               <img 
-                src={`${import.meta.env.BASE_URL}JpJ.png`} 
+                src={getAssetUrl("JpJ.png")} 
                 alt="Ioannis H Platsis" 
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
                 referrerPolicy="no-referrer"
@@ -447,7 +454,7 @@ export default function App() {
                   
                   <div className="w-16 h-16 rounded-2xl bg-white dark:bg-white/5 shadow-sm border border-slate-100 dark:border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
                     <img 
-                      src={exp.logo.startsWith('http') ? exp.logo : `${import.meta.env.BASE_URL}${exp.logo.startsWith('/') ? exp.logo.slice(1) : exp.logo}`} 
+                      src={getAssetUrl(exp.logo)} 
                       alt={exp.company} 
                       className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
@@ -501,7 +508,7 @@ export default function App() {
                 <div key={i} className="material-card p-8 flex gap-6 group">
                   <div className={`w-20 h-20 rounded-2xl bg-white ${edu.school.includes("Kent") ? "dark:bg-white" : "dark:bg-white/5"} shadow-sm border border-slate-100 dark:border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow`}>
                     <img 
-                      src={edu.logo.startsWith('http') ? edu.logo : `${import.meta.env.BASE_URL}${edu.logo.startsWith('/') ? edu.logo.slice(1) : edu.logo}`} 
+                      src={getAssetUrl(edu.logo)} 
                       alt={edu.school} 
                       className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
@@ -567,7 +574,7 @@ export default function App() {
                 >
                   <div className="aspect-[16/10] overflow-hidden relative bg-white dark:bg-white/5 flex items-center justify-center">
                     <img 
-                      src={project.image.startsWith('http') ? project.image : `${import.meta.env.BASE_URL}${project.image.startsWith('/') ? project.image.slice(1) : project.image}`} 
+                      src={getAssetUrl(project.image)} 
                       alt={project.title} 
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       referrerPolicy="no-referrer"
