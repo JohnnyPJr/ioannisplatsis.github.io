@@ -174,13 +174,10 @@ export default function App() {
       {/* Floating Bottom Navigation */}
       <nav className="floating-nav group/nav">
         <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-white dark:border-white/20 shadow-sm mr-2 hidden md:block group-hover/nav:scale-105 transition-transform duration-500">
-          <img 
-            src={getAssetUrl("JpJ.png")} 
-            alt="Ioannis" 
+          <img
+            src={getAssetUrl("JpJ.png")}
+            alt="Ioannis"
             className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://picsum.photos/seed/ios-dev/100/100";
-            }}
           />
         </div>
         {[
@@ -321,14 +318,11 @@ export default function App() {
             className="md:col-span-4 flex items-center justify-center"
           >
             <div className="relative w-full max-w-[320px] aspect-square rounded-full overflow-hidden border-8 border-white dark:border-white/10 shadow-2xl group">
-              <img 
-                src={getAssetUrl("JpJ.png")} 
-                alt="Ioannis H Platsis" 
+              <img
+                src={getAssetUrl("JpJ.png")}
+                alt="Ioannis H Platsis"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://picsum.photos/seed/ios-dev/400/400";
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
             </div>
@@ -456,14 +450,11 @@ export default function App() {
                   <div className="absolute -left-[41px] top-1.5 w-4 h-4 rounded-full border-4 border-surface bg-spot-primary group-hover:scale-125 transition-transform duration-300 shadow-sm z-10" />
                   
                   <div className="w-16 h-16 rounded-2xl bg-white dark:bg-white/5 shadow-sm border border-slate-100 dark:border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow">
-                    <img 
-                      src={getAssetUrl(exp.logo)} 
-                      alt={exp.company} 
+                    <img
+                      src={getAssetUrl(exp.logo)}
+                      alt={exp.company}
                       className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${exp.company}/100/100`;
-                      }}
                     />
                   </div>
 
@@ -510,14 +501,11 @@ export default function App() {
               ].map((edu, i) => (
                 <div key={i} className="material-card p-8 flex gap-6 group">
                   <div className={`w-20 h-20 rounded-2xl bg-white ${edu.school.includes("Kent") ? "dark:bg-white" : "dark:bg-white/5"} shadow-sm border border-slate-100 dark:border-white/10 flex-shrink-0 flex items-center justify-center overflow-hidden group-hover:shadow-md transition-shadow`}>
-                    <img 
-                      src={getAssetUrl(edu.logo)} 
-                      alt={edu.school} 
+                    <img
+                      src={getAssetUrl(edu.logo)}
+                      alt={edu.school}
                       className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://picsum.photos/seed/${edu.school}/100/100`;
-                      }}
                     />
                   </div>
                   <div className="space-y-4 flex-1">
