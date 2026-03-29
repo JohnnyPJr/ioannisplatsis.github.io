@@ -66,9 +66,9 @@ export default function App() {
   const getAssetUrl = (path: string) => {
     if (!path) return "";
     if (path.startsWith('http')) return path;
-    // Remove leading slash to make the path relative
-    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-    return cleanPath;
+      const base = import.meta.env.BASE_URL;
+      const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+      return `${base}${cleanPath}`;
   };
 
   const toggleTheme = () => {
