@@ -65,8 +65,12 @@ export default function App() {
 
   const getAssetUrl = (path: string) => {
     if (!path) return "";
-    // Return path as-is - Vite handles the base URL automatically
-       return path;
+    if (path.startsWith('http')) return path;
+    // Prepend Vite's base URL to the path
+    const base = import.meta.env.BASE_URL || '/';
+    // Remove leading slash from path to avoid double slashes
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+    return `${base}${cleanPath}`;
   };
 
   const toggleTheme = () => {
